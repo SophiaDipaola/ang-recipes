@@ -1,0 +1,17 @@
+<div class="row">
+  <div class="col-xs-10">
+    <!-- this makes sure that the data of the new ingredient is being passed through with the ignition of the event -->
+    <app-shopping-list-edit></app-shopping-list-edit>
+    <hr>
+    <ul class="list-group">
+      <!-- looping through ingredient array in order to make sure that the data is displayed on the page -->
+      <!-- need to extract id with let i = index in order to replace the values with the updated ones -->
+      <a 
+      class="list-group-item" 
+      style="cursor: pointer" 
+      *ngFor="let ingredient of ingredients; let i = index"
+      (click)="onEditItem(i)">
+        {{ ingredient.name }} ({{ ingredient.amount }})</a>
+    </ul>
+  </div>
+</div>
