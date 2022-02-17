@@ -1,0 +1,38 @@
+$background-color:rgb(112,139,120,0.5);
+$font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif; 
+
+.recipe-edit-form{
+    background-color:$background-color;
+    width: 550px;
+    height: 85%;
+    //  border-radius: 25%;
+    padding: 15px;
+    margin-top: 250px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border: 1px solid rgb(250, 63, 129);
+    padding: 10px;
+    box-shadow: 5px 10px rgb(250, 63, 129);
+    
+    mat-form-field{
+        margin-right: 100px;
+        font-family: $font-family;
+    }
+   
+    
+}
+
+img {
+    border-radius:50%;
+    width: 250px;
+    height:250px;
+}
+
+       
+           button {
+               background-color: rgb(250, 63, 129);
+               color:white;
+               font-family: $font-family;
+           }
+    

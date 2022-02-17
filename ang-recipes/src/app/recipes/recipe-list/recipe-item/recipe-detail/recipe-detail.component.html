@@ -1,45 +1,38 @@
-<div class="row">
-  <div class="col-xs-12">
+<div class="recipe-details">
+  <div class="recipe-name">
+    <h1>{{ recipe.name }}</h1>
+  </div>
+  <div class="recipe-detail-img">
     <img 
     [src]="recipe.imagePath" 
     alt="{{ recipe.name }}" 
-    class="img-responsive" 
-    style="max-height: 300px;">
+    class="img-responsive">
   </div>
-</div>
-<div class="row">
-  <div class="col-xs-12">
-    <h1>{{ recipe.name }}</h1>
-  </div>
-</div>
-<div class="row">
-  <div class="col-xs-12">
-    <!-- adding dropdown menu from custom dropdown menu directive -->
-    <div class="btn-group" appDropdown>
-      <button 
-      type="button" 
-      class="btn btn-ptimary dropdown-toggle">
-      Manage Recipe
-      <span class="caret"></span></button>
-      <ul class="dropdown-menu">
-        <li><a (click)="onAddToShoppingList()" style="cursor:pointer">To Shopping list</a></li>
-        <li><a style="cursor:pointer" (click)= "onEditRecipe()">Edit Recipe</a></li>
-        <li><a style="cursor:pointer" (click)="onDeleteRecipe()">Delete Recipe</a></li>
+<div class="manage-recipes">
+  <div class="manage-recipes-nav">
+      <ul class="manage-recipes-links">
+        <li><button 
+          mat-raised-button 
+          (click)="onAddToShoppingList()" >
+          Shopping list</button></li>
+        <li><button 
+          mat-raised-button 
+          (click)= "onEditRecipe()">
+          Edit Recipe</button></li>
+        <li><button 
+          mat-raised-button 
+          (click)="onDeleteRecipe()">
+          Delete Recipe</button></li>
       </ul>
-    </div>
   </div>
 </div>
-<div class="row">
-  <div class="col-xs-12">
-    {{ recipe.description }}
-  </div>
+<div class="recipe-desc">
+   <p>{{ recipe.description }}</p>
 </div>
-<br />
-<div class="row">
-  <div class="col-xs-12">
-    <ul class="list-group">
-      <li class="list-group-item" *ngFor=" let ingredient of recipe.ingredients">
-        {{ ingredient.name }} - {{ ingredient.amount }}
+  <div class="ingredients-list">
+    <ul>
+      <li *ngFor=" let ingredient of recipe.ingredients">
+        {{ ingredient.name }} ({{ ingredient.amount }}) 
       </li>
     </ul>
   </div>

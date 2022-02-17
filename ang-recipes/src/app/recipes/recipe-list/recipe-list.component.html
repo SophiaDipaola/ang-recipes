@@ -1,19 +1,14 @@
-<div class="row">
-  <div class="col-xs-12">
-    <button class="btn btn-success" (click)="onNewRecipe()">New Recipe
+
+<div class="recipe-list">
+  <div class="new-recipe">
+    <button mat-raised-button (click)="onNewRecipe()">New Recipe
     </button>
   </div>
-</div>
-<hr>
-<div class="row">
-  <div class="col-xs-12">
-    <!-- whole component is replicated for each recipe -->
-    <!-- then binding to recipe -->
-    <!-- id is being bound to the recipe with the index capture-->
+<div class="recipe-item">
     <app-recipe-item 
     *ngFor="let recipeEl of recipes; let i = index" 
     [recipe]="recipeEl"   
     [index]="i">
-    </app-recipe-item>
-  </div>
+    </app-recipe-item> 
+</div>
 </div>

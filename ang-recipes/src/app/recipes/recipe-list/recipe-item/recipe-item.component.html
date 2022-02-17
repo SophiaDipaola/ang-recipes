@@ -1,18 +1,17 @@
-<!-- onSelected is our funtion that connects the click with the event outcome which is revealing the name and description -->
 <a 
-style="cursor: pointer;" 
-class="list-group-item clearfix" 
+class="recipe-item-link" 
 [routerLink] = "[index]"
 routerLinkActive="active">
-  <div class="pull-left">
-    <h4 class="list-group-item-heading">{{ recipe.name }}</h4>
-    <p class="list-group-item-test">{{ recipe.description }}</p>
+  <div class="recipe-item">
+    <div class="recipe-item-content">
+    <h4>{{ recipe.name }}</h4>
+    <p>{{ recipe.description }}</p>
+    <span>
+      <img 
+      class="recipe-item-img" 
+      [src]="recipe.imagePath" 
+      alt="{{ recipe.name }}">
+    </span>
+    </div>
   </div>
-  <span class="pull-right">
-    <img 
-    [src]="recipe.imagePath" 
-    alt="{{ recipe.name }}" 
-    class="img-responsive" 
-    style="max-height: 50px;">
-  </span>
 </a>
