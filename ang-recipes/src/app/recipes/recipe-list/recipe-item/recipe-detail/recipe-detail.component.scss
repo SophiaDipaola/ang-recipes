@@ -1,0 +1,94 @@
+$text-decoration: none;
+$color: black;
+$font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif; 
+
+
+    .manage-recipes{
+            
+            text-decoration: $text-decoration;
+            display: flex;
+        
+        .manage-recipes-nav{
+
+            a{
+                text-decoration: none;
+                font-size: 20px;
+                color: $color;
+                font-family:cursive;
+                
+            }
+        }
+        .manage-recipes-links {
+
+
+            button {
+            text-decoration: $text-decoration;
+                 color: $color; 
+                 font-family:$font-family; 
+                 background:  rgb(252,224,170) ;
+                 border-radius: 25px;
+                 border-color: white;
+                 padding:4px 6px 4px 6px;
+                 border:none;
+
+              }
+              li{
+                  display: inline;
+                  flex-direction: row;
+                  list-style-type: none;
+                   padding: 8px;
+                   font-size: 20px;;
+                   :hover{ 
+                       color: white;
+                    cursor: pointer;
+                   }
+                  
+              }
+              
+    }
+}
+
+    .recipe-name{
+        text-decoration: none;
+                font-size: 20px;
+                color: $color;
+                font-family:$font-family;
+    }
+
+    .ingredients-list{
+        ul{
+            list-style-image: url(https://i.imgur.com/zhGh1u5.png?1);
+            li{
+                color:$color;
+                 font-family:$font-family; 
+            }
+        }
+        
+    }
+    .recipe-detail-img{
+        img{
+        border-radius:50%;
+        width: 300px;
+        height:300px;
+        }
+    }
+    .recipe-desc{
+        p{
+            color:$color;
+        font-family:$font-family; 
+        text-align: center;
+    }
+        
+    }
+   
+.recipe-details{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+     background: rgba(250, 77, 75, 0.5);
+     width: 650px;
+     height: 800px;
+     border-radius: 25%;
+     padding: 15px;
+     margin-top: 250px;
+}

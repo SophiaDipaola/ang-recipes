@@ -12,7 +12,7 @@ export class RecipeService {
 
   // private so you cant get access to array from the outside
   private recipes: Recipe[] = [ 
-    new Recipe('Vegan Ramen with Miso Shiitake Broth', 'Sumptuous and oozing with flavor, a good bowl of Ramen is pure comfort food. Here is a recipe for Vegan Ramen that is made with a flavorful, rich Miso Shiitake Broth. ', 'https://i.imgur.com/XD2znom.png',
+    new Recipe('Vegan Ramen ', 'Sumptuous and oozing with flavor, a good bowl of Ramen is pure comfort food. Here is a recipe for Vegan Ramen that is made with a flavorful, rich Miso Shiitake Broth. ', 'https://i.imgur.com/XD2znom.png',
       [new Ingredient('onion', 1),
       new Ingredient('veggie stock', 1),
       new Ingredient('shiitake mushrooms', 10),
