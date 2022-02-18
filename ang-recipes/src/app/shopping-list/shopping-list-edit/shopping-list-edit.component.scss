@@ -1,0 +1,27 @@
+$font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif; 
+
+.shopping-list {
+
+    mat-form-field {
+        font-family: $font-family;
+    }
+    
+    button {
+        background:rgb(252,224,170);
+        color:black;
+        border-radius:25px;
+        border-color: white;
+        padding:4px 6px 4px 6px;
+        border:none;
+        font-family:$font-family; 
+            :hover{ 
+                cursor: pointer;
+            }
+    }
+
+    .shopping-buttons {
+        display: flex;
+        justify-content: space-around;
+    }
+
+}

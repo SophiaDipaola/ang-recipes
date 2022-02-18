@@ -1,0 +1,17 @@
+<a 
+class="recipe-item-link" 
+[routerLink] = "[index]"
+routerLinkActive="active">
+  <div class="recipe-item">
+    <div class="recipe-item-content">
+    <h4>{{ recipe.name }}</h4>
+    <p>{{ recipe.description }}</p>
+    <span>
+      <img 
+      class="recipe-item-img" 
+      [src]="recipe.imagePath" 
+      alt="{{ recipe.name }}">
+    </span>
+    </div>
+  </div>
+</a>

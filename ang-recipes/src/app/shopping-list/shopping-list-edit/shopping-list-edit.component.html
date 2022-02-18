@@ -1,0 +1,38 @@
+<div class="shopping-list">
+    <form (ngSubmit)="onSubmit(f)" #f="ngForm">
+      <div>
+        <mat-form-field class="shopping-list-name">
+          <mat-label for="name">Name</mat-label>
+          <input matInput
+          type="text" 
+          id="name"    
+          name="name"
+          ngModel
+          required
+          >
+        </mat-form-field>
+        <mat-form-field class="shopping-list-amount">
+          <mat-label for="amount">Amount</mat-label>
+          <input matInput
+          type="number" 
+          id="amount" 
+          name="amount"
+          ngModel
+          required
+          >
+        </mat-form-field>
+          <div class="shopping-buttons">
+            <button 
+            mat-raised-button   
+            type="submit" 
+            >{{ editMode ? 'Update' : 'Add'}}</button>
+            <button mat-raised-button type="button"(click)="onDelete()">Delete</button>
+            <button mat-raised-button  
+            type="button" 
+            (click)="onClear()"
+           *ngIf="editMode">Clear</button>
+          </div> 
+      </div>
+    </form>
+  
+</div>

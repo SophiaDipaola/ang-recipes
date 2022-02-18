@@ -1,0 +1,33 @@
+$font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif; 
+$display: flex;
+$flex-direction: column;
+
+.shopping-list-container {
+    background: rgb(243, 165, 165);
+    font-family: $font-family;
+     display: $display;
+    flex-direction: $flex-direction;
+    align-items: center;
+    width: 600px;
+    height: 700px;
+    border-radius: 25%;
+    padding: 15px;
+    margin-top: 250px;
+    margin-left: 600px;
+
+    .ingredient-list {    
+
+        li {
+            display: $display;
+            flex-direction: $flex-direction; 
+            margin-right: 300px;
+                :hover{
+                    cursor: pointer;
+                    color:white;
+                }
+        }
+        
+    
+    }
+   
+}

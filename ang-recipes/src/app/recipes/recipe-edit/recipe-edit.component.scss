@@ -1,0 +1,70 @@
+$background-color:rgba(250, 77, 75, 0.5);
+$font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif; 
+
+.recipe-edit-form {
+    background-color:$background-color;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 675px;
+    height: 830px;
+    border-radius: 25%;
+    padding: 15px;
+    margin-top: 250px;
+    
+   .edit-form-containers {
+            display: flex;
+            flex-direction: column;
+            .top-edit-form-container {
+                margin-left: 50px;
+            }
+            .bottom-edit-form-container {
+                margin-left:30px;
+            }              
+    }
+
+    mat-form-field {
+            margin-right:100px;
+            font-family: $font-family;
+            &.ing-amount-form-field {
+                width:30px;
+            }
+            &.ing-name-form-field {
+                width: 100px;
+            }
+            &.description-form-field {
+                width:100%;
+                margin-top: 20px;
+            }
+            &.img-form-field{
+                width:70%;
+            }
+    }
+
+    button {
+             background: rgb(252,224,170) ;
+             font-family: $font-family;
+             border-radius: 20px;
+             color:black;
+             padding:4px 6px 4px 6px;
+    }
+
+    img {
+            border-radius:50%;
+            width: 150px;
+            height:150px;
+    }
+
+           
+    mat-list {
+            &.save-cancel-buttons {
+                margin-top: 10px;
+                display: inline-flex;
+                margin-left:160px;
+            }
+    
+        }
+}
+
+   
+   
