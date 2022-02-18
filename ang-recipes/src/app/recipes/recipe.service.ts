@@ -15,18 +15,18 @@ export class RecipeService {
     new Recipe('Vegan Ramen ', 'Sumptuous and oozing with flavor, a good bowl of Ramen is pure comfort food. Here is a recipe for Vegan Ramen that is made with a flavorful, rich Miso Shiitake Broth. ', 'https://i.imgur.com/XD2znom.png',
       [new Ingredient('onion', 1),
       new Ingredient('veggie stock', 1),
-      new Ingredient('shiitake mushrooms', 10),
+      new Ingredient('mushrooms', 10),
       new Ingredient('kombu', 2),
       new Ingredient('miso paste', 1),
       new Ingredient('tofu', 1),
       ]),
     new Recipe('Roasted Eggplant with Zaatar', 'Earthy, tangy, Middle Eastern flavors compliment luscious roasted eggplant. A simple, healthy weeknight dinner that will satisfy.', 'https://i.imgur.com/SSvqU1w.png',
       [new Ingredient('eggplant', 1),
-      new Ingredient('tablespoon of Zaatar', 1),
-      new Ingredient('cloves of garlic', 4),
-      new Ingredient('cups of rice', 2),
+      new Ingredient('Zaatar', 1),
+      new Ingredient('garlic', 4),
+      new Ingredient('rice', 2),
       new Ingredient('cucumber', 1),
-      new Ingredient('package of grape tomatoes', 1),
+      new Ingredient('tomatoe', 1),
 
       ])
   ];
