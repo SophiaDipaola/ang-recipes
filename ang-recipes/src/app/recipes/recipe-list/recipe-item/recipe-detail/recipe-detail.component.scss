@@ -3,26 +3,23 @@ $color: black;
 $font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif; 
 
 
-    .manage-recipes{
-            
+.manage-recipes {           
             text-decoration: $text-decoration;
             display: flex;
         
-        .manage-recipes-nav{
-
-            a{
-                text-decoration: none;
-                font-size: 20px;
-                color: $color;
-                font-family:cursive;
-                
-            }
+    .manage-recipes-nav 
+        a {
+            text-decoration: none;
+            font-size: 20px;
+            color: $color;
+            font-family:cursive;     
         }
-        .manage-recipes-links {
+    }
 
+    .manage-recipes-links {
 
             button {
-            text-decoration: $text-decoration;
+                text-decoration: $text-decoration;
                  color: $color; 
                  font-family:$font-family; 
                  background:  rgb(252,224,170) ;
@@ -30,9 +27,9 @@ $font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
                  border-color: white;
                  padding:4px 6px 4px 6px;
                  border:none;
-
               }
-              li{
+
+              li {
                   display: inline;
                   flex-direction: row;
                   list-style-type: none;
@@ -46,49 +43,51 @@ $font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
               }
               
     }
-}
 
-    .recipe-name{
+
+    .recipe-name {
         text-decoration: none;
-                font-size: 20px;
-                color: $color;
-                font-family:$font-family;
+        font-size: 20px;
+        color: $color;
+        font-family:$font-family;
     }
 
-    .ingredients-list{
-        ul{
+    .ingredients-list {
+        ul {
             list-style-image: url(https://i.imgur.com/zhGh1u5.png?1);
-            li{
+            li {
                 color:$color;
-                 font-family:$font-family; 
+                font-family:$font-family; 
             }
         }
         
     }
-    .recipe-detail-img{
-        img{
-        border-radius:50%;
-        width: 300px;
-        height:300px;
+
+    .recipe-detail-img {
+        img {
+            border-radius:50%;
+            width: 300px;
+            height:300px;
         }
     }
-    .recipe-desc{
-        p{
-            color:$color;
+
+    .recipe-desc {
+        p {
+        color:$color;
         font-family:$font-family; 
         text-align: center;
-    }
+        }
         
     }
    
-.recipe-details{
+.recipe-details {
     display: flex;
     flex-direction: column;
     align-items: center;
-     background: rgba(250, 77, 75, 0.5);
-     width: 650px;
-     height: 800px;
-     border-radius: 25%;
-     padding: 15px;
-     margin-top: 250px;
+    background: rgba(250, 77, 75, 0.5);
+    width: 650px;
+    height: 800px;
+    border-radius: 25%;
+    padding: 15px;
+    margin-top: 250px;
 }
