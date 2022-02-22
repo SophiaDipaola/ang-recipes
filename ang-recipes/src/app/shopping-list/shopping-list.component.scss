@@ -1,11 +1,11 @@
-$font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif; 
+$font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
 $display: flex;
 $flex-direction: column;
 
 .shopping-list-container {
     background: rgb(243, 165, 165);
     font-family: $font-family;
-     display: $display;
+    display: $display;
     flex-direction: $flex-direction;
     align-items: center;
     width: 600px;
@@ -15,19 +15,15 @@ $flex-direction: column;
     margin-top: 250px;
     margin-left: 600px;
 
-    .ingredient-list {    
-
+    .ingredient-list {
         li {
             display: $display;
-            flex-direction: $flex-direction; 
+            flex-direction: $flex-direction;
             margin-right: 300px;
-                :hover{
-                    cursor: pointer;
-                    color:white;
-                }
+            :hover {
+                cursor: pointer;
+                color: white;
+            }
         }
-        
-    
     }
-   
 }

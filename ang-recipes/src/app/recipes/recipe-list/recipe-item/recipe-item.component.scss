@@ -1,50 +1,42 @@
 $background: rgba(0, 0, 0, 0.5);
-$color:white;
+$color: white;
 $text-decoration: none;
-$font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif; 
+$font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
 
-
-.recipe-item{
+.recipe-item {
     background: $background;
     width: 400px;
-    height:400px;
+    height: 400px;
     border-radius: 50%;
     text-align: center;
     margin-top: 20px;
     display: flex;
     align-items: center;
     margin-left: 700px;
-
 }
 
-    
-   .recipe-item-content{
-      
-      h4{
+.recipe-item-content {
+    h4 {
         color: $color;
         font-size: 20px;
         font-family: $font-family;
         margin-top: 20px;
-       
-
     }
-    p{
-       font-size: 15px;
-       color:$color;
+    p {
+        font-size: 15px;
+        color: $color;
     }
-    span{
-        img{
-            margin-top:20px;
+    span {
+        img {
+            margin-top: 20px;
             width: 90px;
-            height:90px;
+            height: 90px;
             border-radius: 50%;
         }
     }
+}
 
-   }
-
- a{
-        text-decoration: $text-decoration;
-        font-family: $font-family;
-        
-    }
+a {
+    text-decoration: $text-decoration;
+    font-family: $font-family;
+}

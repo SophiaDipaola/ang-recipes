@@ -11,11 +11,10 @@ import { ShoppingListService } from './shopping-list.service';
   styleUrls: ['./shopping-list.component.scss']
 })
 export class ShoppingListComponent implements OnInit, OnDestroy {
-  // establishing ingredient array and locking it in by connecting it to the model object
   ingredients: Ingredient[]
   private subscription: Subscription
 
-  // providing the shopping list service 
+
   constructor(private slService: ShoppingListService) { }
 
   ngOnInit() {
@@ -27,7 +26,7 @@ export class ShoppingListComponent implements OnInit, OnDestroy {
         }
       )
   }
-  // will insure that we pass on the index to our subject so it can listen to it in the sophing edit component
+
   onEditItem(index: number) {
     this.slService.startedEditing.next(index)
   }

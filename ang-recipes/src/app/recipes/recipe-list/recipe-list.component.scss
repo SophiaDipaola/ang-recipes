@@ -1,36 +1,28 @@
-$background: rgb(252,224,170) ;
-$color:white;
-$font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif; 
-$display:in-line block;
+$background: rgb(252, 224, 170);
+$color: white;
+$font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
+$display: in-line block;
 
-.new-recipe{
-  
-button{
-  align-items: center;
-      background: $background;
+.new-recipe {
+  button {
+    align-items: center;
+    background: $background;
     display: inline-block;
     border-radius: 50%;
     width: 120px;
     height: 120px;
     text-align: center;
-    color:$color;
+    color: $color;
     font-family: $font-family;
     font-weight: bold;
     font-size: 18px;
     margin-left: 600px;
     margin-top: 120px;
-    border:none;
+    border: none;
     cursor: pointer;
-}
-   
+  }
 }
 
-.recipe{
+.recipe {
   flex-direction: row;
- 
 }
-
-
-        
-    
-   
