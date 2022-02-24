@@ -1,77 +1,86 @@
-import { Component, OnInit, OnDestroy, ViewChild } from '@angular/core';
-import { NgForm } from '@angular/forms';
-import { Subscription } from 'rxjs';
-
-
-import { Ingredient } from 'src/app/shared/ingredient.model';
+import { Component, OnInit } from '@angular/core';
+import { FormControl, FormGroup, FormArray } from '@angular/forms';
 import { ShoppingListService } from '../shopping-list.service';
+import { Router, ActivatedRoute, Params } from '@angular/router';
+
 
 @Component({
   selector: 'app-shopping-list-edit',
   templateUrl: './shopping-list-edit.component.html',
   styleUrls: ['./shopping-list-edit.component.scss']
 })
-export class ShoppingListEditComponent implements OnInit, OnDestroy {
-  @ViewChild('f') slForm: NgForm
-  // extablishing to connection to the local input reference for both name and amount
-  subscription: Subscription
+
+export class ShoppingListEditComponent implements OnInit {
+  id: number
   editMode = false
-// store index of item that is being edited
-  editedItemIndex: number
-  editedItem: Ingredient
-  
-  constructor(private slService: ShoppingListService) {
+  shoppingForm: FormGroup = new FormGroup({})
 
-  }
+  constructor(
+    private route: ActivatedRoute,
+    private shoppingService: ShoppingListService,
+    private router: Router) { }
 
- 
-  
-  
   ngOnInit() {
-    this.subscription = this.slService.startedEditing
+    this.route.params
       .subscribe(
-        (index: number) => {
-          // getting number of index when start editing
-          this.editedItemIndex = index
-           // edit mode is true because it will be in edit mode once it starts
-          this.editMode = true
-           // subscribe to startedEditing subject
-          this.editedItem = this.slService.getIngredient(index)
-          // reach out to form to assign a new value when when doen editing 
-          this.slForm.setValue({
-            name: this.editedItem.name,
-            amount: this.editedItem.amount
-          })
+        (params: Params) => {
+          this.id = +params['id']
+          this.editMode = params['id'] != null
+          this.initForm()
         }
       )
   }
 
-  onSubmit(form: NgForm) {
-   
-    // pulling the values from the ingredient model to make sure new information is locked in
-    const value = form.value
-    const newIngredient = new Ingredient(value.name, value.amount)
+  onSubmit() {
+    console.log(this.shoppingForm.value);
+    console.log(this.editMode);
     if (this.editMode) {
-      this.slService.updateIngredient(this.editedItemIndex, newIngredient)
-  
+      this.shoppingService.updateIngredient(this.id, this.shoppingForm.value);
+      this.router.navigate(['/shopping-list']);
     } else {
-      this.slService.addIngredient(newIngredient)
+      this.shoppingService.addIngredient(this.shoppingForm.value);
     }
-    this.editMode = false
-    // resetting form after there is a change
-    form.reset()
-  }
-  onClear() {
-    this.slForm.reset()
-    this.editMode = false
-  }
-  onDelete() {
-    this.slService.deleteIngredient(this.editedItemIndex)
-    this.onClear()
-  }
-  // to clean up subscription to reduce memory leak
-  ngOnDestroy() {
-    this.subscription.unsubscribe
+    this.onClear();
   }
 
+  onAddIngredient() {
+    (this.shoppingForm.get('shoppingList') as FormArray).push(
+      new FormGroup({
+        name: new FormControl(''),
+        amount: new FormControl()
+      })
+    );
+  }
+
+  onClear() {
+    this.shoppingForm.reset()
+  }
+
+  onDeleteIngredient(index: number) {
+    this.shoppingService.deleteIngredient(index)
+    this.router.navigate(['/shopping-list'])
+  }
+
+  private initForm() {
+    let ingredientName = ''
+    let ingredientAmount: number
+    let newIngredients = new FormArray([])
+
+    if (this.editMode) {
+      const ingredient = this.shoppingService.getIngredient(this.id)
+      ingredientName = ingredient.name
+      ingredientAmount = ingredient.amount
+    }
+
+    this.shoppingForm = new FormGroup({
+      'name': new FormControl(ingredientName),
+      'amount': new FormControl(ingredientAmount),
+      'ingredients': newIngredients
+    })
+  }
+
+  get controls() {
+    return (this.shoppingForm.get('shoppingList') as FormArray).controls;
+  }
 }
+

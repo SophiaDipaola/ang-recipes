@@ -3,36 +3,40 @@
     <h1>{{ recipe.name }}</h1>
   </div>
   <div class="recipe-detail-img">
-    <img 
-    [src]="recipe.imagePath" 
-    alt="{{ recipe.name }}" 
-    class="img-responsive">
+    <img
+      [src]="recipe.imagePath"
+      alt="{{ recipe.name }}"
+      class="img-responsive"
+    />
   </div>
-<div class="manage-recipes">
-  <div class="manage-recipes-nav">
+  <div class="manage-recipes">
+    <div class="manage-recipes-nav">
       <ul class="manage-recipes-links">
-        <li><button 
-          mat-raised-button 
-          (click)="onAddToShoppingList()" >
-          Shopping list</button></li>
-        <li><button 
-          mat-raised-button 
-          (click)= "onEditRecipe()">
-          Edit Recipe</button></li>
-        <li><button 
-          mat-raised-button 
-          (click)="onDeleteRecipe()">
-          Delete Recipe</button></li>
+        <li>
+          <button mat-raised-button (click)="onAddToShoppingList()">
+            Shopping list
+          </button>
+        </li>
+        <li>
+          <button mat-raised-button (click)="onEditRecipe()">
+            Edit Recipe
+          </button>
+        </li>
+        <li>
+          <button mat-raised-button (click)="onDeleteRecipe()">
+            Delete Recipe
+          </button>
+        </li>
       </ul>
+    </div>
   </div>
-</div>
-<div class="recipe-desc">
-   <p>{{ recipe.description }}</p>
-</div>
+  <div class="recipe-desc">
+    <p>{{ recipe.description }}</p>
+  </div>
   <div class="ingredients-list">
     <ul>
-      <li *ngFor=" let ingredient of recipe.ingredients">
-        {{ ingredient.name }} ({{ ingredient.amount }}) 
+      <li *ngFor="let ingredient of recipe.ingredients">
+        {{ ingredient.name }} ({{ ingredient.amount }})
       </li>
     </ul>
   </div>

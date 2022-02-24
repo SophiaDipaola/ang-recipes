@@ -1,14 +1,13 @@
-
 <div class="recipe-list">
   <div class="new-recipe">
-    <button mat-raised-button (click)="onNewRecipe()">New Recipe
-    </button>
+    <button mat-raised-button (click)="onNewRecipe()">New Recipe</button>
   </div>
-<div class="recipe-item">
-    <app-recipe-item 
-    *ngFor="let recipeEl of recipes; let i = index" 
-    [recipe]="recipeEl"   
-    [index]="i">
-    </app-recipe-item> 
-</div>
+  <div class="recipe-item">
+    <app-recipe-item
+      *ngFor="let recipeEl of recipes; let i = index"
+      [recipe]="recipeEl"
+      [index]="i"
+    >
+    </app-recipe-item>
+  </div>
 </div>

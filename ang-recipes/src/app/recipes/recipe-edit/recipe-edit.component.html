@@ -1,72 +1,101 @@
 <div class="recipe-edit-form">
   <form [formGroup]="recipeForm" (ngSubmit)="onSubmit()">
-
-    <br />
     <div class="edit-form-containers">
-
-    <div class="top-edit-form-container">
+      <div class="top-edit-form-container">
         <mat-list class="save-cancel-buttons">
-          <mat-list-item class="save-button"><button type="submit" mat-raised-button>
-              Save</button></mat-list-item>
-          <mat-list-item class="cancel-button"><button type="button" mat-raised-button (click)="onCancel()">
-              Cancel</button></mat-list-item>
+          <mat-list-item class="save-button"
+            ><button type="submit" mat-raised-button>
+              Save
+            </button></mat-list-item
+          >
+          <mat-list-item class="cancel-button"
+            ><button type="button" mat-raised-button (click)="onCancel()">
+              Cancel
+            </button></mat-list-item
+          >
         </mat-list>
-      <div class="recipe-edit-name">
-        <mat-form-field class="name-form-field">
-          <mat-label for="name">Name</mat-label>
-          <input matInput type="text" id="name" formControlName="name">
-        </mat-form-field>
+        <div class="recipe-edit-name">
+          <mat-form-field class="name-form-field">
+            <mat-label for="name">Name</mat-label>
+            <input matInput type="text" id="name" formControlName="name" />
+          </mat-form-field>
+        </div>
+        <div class="recipe-edit-description">
+          <mat-form-field class="description-form-field">
+            <mat-label for="description">Description</mat-label>
+            <textarea
+              matInput
+              type="text"
+              id="description"
+              formControlName="description"
+            >
+            </textarea>
+          </mat-form-field>
+        </div>
+        <div class="recipe-edit-img">
+          <mat-form-field class="img-form-field">
+            <mat-label for="imagePath">Image URL</mat-label>
+            <input
+              matInput
+              type="text"
+              id="imagePath"
+              formControlName="imagePath"
+              #imagePath
+            />
+          </mat-form-field>
+        </div>
+        <div class="recipe-edit-img-preview">
+          <img [src]="imagePath.value" class="img-responsive" />
+        </div>
       </div>
-      
-      <div class="recipe-edit-description">
-        <mat-form-field class="description-form-field">
-          <mat-label for="description">Description</mat-label>
-          <textarea matInput type="text" id="description" formControlName="description">
-                </textarea>
-        </mat-form-field>
-      </div>
-    
-      <div class="recipe-edit-img">
-        <mat-form-field class="img-form-field">
-          <mat-label for="imagePath">Image URL</mat-label>
-          <input matInput type="text" id="imagePath" formControlName="imagePath" #imagePath>
-        </mat-form-field>
-      </div>
-      <div class="recipe-edit-img-preview">
-        <img [src]="imagePath.value" class="img-responsive">
-      </div>
-      </div>
-
-    <div class="bottom-edit-form-container">
-      <div>
-        <mat-list class="ingredients" formArrayName="ingredients">
-          <div class="ing-name" *ngFor="let ingredientCtrl of controls; let i = index" [formGroupName]="i">
-            <mat-list-item>
-            <mat-form-field class="ing-name-form-field">
-              <input matInput type="text" class="ing-name" formControlName="name">
-            </mat-form-field>
-            <div class="ing-amount">
-              <mat-form-field class="ing-amount-form-field">
-                <input matInput type="number" formControlName="amount">
-              </mat-form-field>
+      <div class="bottom-edit-form-container">
+        <div>
+          <mat-list class="ingredients" formArrayName="ingredients">
+            <div
+              class="ing-name"
+              *ngFor="let ingredientCtrl of controls; let i = index"
+              [formGroupName]="i"
+            >
+              <mat-list-item>
+                <mat-form-field class="ing-name-form-field">
+                  <input
+                    matInput
+                    type="text"
+                    class="ing-name"
+                    formControlName="name"
+                  />
+                </mat-form-field>
+                <div class="ing-amount">
+                  <mat-form-field class="ing-amount-form-field">
+                    <input matInput type="number" formControlName="amount" />
+                  </mat-form-field>
+                </div>
+                <div>
+                  <button
+                    class="ing-delete-button"
+                    mat-mini-fab
+                    type="button"
+                    (click)="onDeleteIngredient(i)"
+                  >
+                    X
+                  </button>
+                </div>
+              </mat-list-item>
             </div>
-            <div>
-              <button class="ing-delete-button" mat-mini-fab type="button" (click)="onDeleteIngredient(i)">
-                X</button>
-            </div>
-            </mat-list-item>
-          </div>
-        </mat-list>
-       
+          </mat-list>
+        </div>
+        <hr />
+        <div>
+          <button
+            class="add-ing-button"
+            type="button"
+            mat-raised-button
+            (click)="onAddIngredient()"
+          >
+            Add Ingredient
+          </button>
+        </div>
       </div>
-      <hr>
-      <div>
-        <button class="add-ing-button" type="button" mat-raised-button (click)="onAddIngredient()">
-          Add Ingredient</button>
-      </div>
-    </div> 
-
-</div>
-
-</form>
+    </div>
+  </form>
 </div>
