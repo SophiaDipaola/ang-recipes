@@ -3,14 +3,7 @@
     <div>
       <mat-form-field class="shopping-list-name">
         <mat-label for="name">Name</mat-label>
-        <input
-          matInput
-          type="text"
-          id="name"
-          [FormControlName]="name"
-          ngModel
-          required
-        />
+        <input matInput type="text" id="name" formControlName="name" required />
       </mat-form-field>
       <mat-form-field class="shopping-list-amount">
         <mat-label for="amount">Amount</mat-label>
@@ -18,8 +11,7 @@
           matInput
           type="number"
           id="amount"
-          [FormControlName]="amount"
-          ngModel
+          formControlName="amount"
           required
         />
       </mat-form-field>
@@ -27,7 +19,11 @@
         <button mat-raised-button type="submit">
           {{ editMode ? "Update" : "Add" }}
         </button>
-        <button mat-raised-button type="button" (click)="onDelete()">
+        <button
+          mat-raised-button
+          type="button"
+          (click)="onDeleteIngredient(id)"
+        >
           Delete
         </button>
         <button

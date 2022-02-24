@@ -1,18 +1,13 @@
-
 import { Ingredient } from '../shared/ingredient.model';
-import { __spreadArray } from 'tslib';
 import { Subject } from 'rxjs';
-
 
 export class ShoppingListService {
   ingredientsChanged = new Subject<Ingredient[]>()
-  startedEditing = new Subject<number>()
 
   private ingredients: Ingredient[] = [
     new Ingredient('Apples', 10),
     new Ingredient('oragnes', 40)
   ]
-
 
   getIngredient(index: number) {
     return this.ingredients[index]
@@ -32,7 +27,7 @@ export class ShoppingListService {
   }
 
   updateIngredient(index: number, newIngredient: Ingredient) {
-    this.ingredients[index] = newIngredient
+    this.ingredients[index] = new Ingredient(newIngredient.name, newIngredient.amount)
     this.ingredientsChanged.next(this.ingredients.slice())
   }
 
